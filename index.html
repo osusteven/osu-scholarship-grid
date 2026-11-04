@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ohio State 2027 Scholarship Grid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Ohio State <span>2027</span> Scholarship Grid</h1>
+    <p class="sub">Projected from the Eleven Warriors 2026 grid: everyone moves up one class, the 13 fifth-years are removed, and the 2027 commits fill the freshman column. Tap a name to mark him as leaving (NFL draft or portal) and the totals update.</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><b id="sTotal">96</b><small>Projected scholarships</small></div>
+    <div class="stat cut"><b id="sOut">0</b><small>Marked leaving</small></div>
+    <div class="stat"><b>13</b><small>Fifth-years gone</small></div>
+    <div class="stat"><b>20</b><small>2027 commits</small></div>
+  </div>
+
+  <div class="legend">
+    <span><span class="chip c">EDMUNDS</span> 2027 commit</span>
+    <span><span class="chip g">SMITH</span> leaving</span>
+    <span>Red total = 3 or fewer at the position</span>
+    <button class="reset" id="reset" type="button">Reset marks</button>
+  </div>
+
+  <div class="scroll">
+    <table id="grid">
+      <thead><tr>
+        <th>Pos</th>
+        <th>Out of Elig.<small>2026 fifth-years</small></th>
+        <th>Fifth-Years<small>2026 seniors</small></th>
+        <th>Seniors<small>2026 juniors</small></th>
+        <th>Juniors<small>2026 sophomores</small></th>
+        <th>Sophomores<small>2026 freshmen</small></th>
+        <th>Freshmen<small>2027 commits</small></th>
+        <th class="tot">Total</th>
+      </tr></thead>
+      <tbody></tbody>
+      <tfoot><tr><th>Totals</th><td id="tg" class="gonetot"></td><td id="t0"></td><td id="t1"></td><td id="t2"></td><td id="t3"></td><td id="t4"></td><td id="t5"></td></tr></tfoot>
+    </table>
+  </div>
+
+  <div class="panels">
+    <section class="panel">
+      <h2>Pressure points</h2>
+      <ul>
+        <li><b>LS:</b> nobody on scholarship once Riggs leaves.</li>
+        <li><b>DT:</b> four of nine are fifth-years and there are no juniors. If the fifth-years go pro, the room is Houston, three sophomores and May.</li>
+        <li><b>QB:</b> if Sayin declares, St. Clair, Fahey and Edmunds remain.</li>
+        <li><b>TE / RB:</b> no 2027 commits at either spot.</li>
+        <li><b>Room to work:</b> 97 projected before any NFL or portal exits.</li>
+      </ul>
+    </section>
+    <section class="panel">
+      <h2>Notes</h2>
+      <ul>
+        <li>All players get five years of eligibility under the NCAA age-based model, so 2026 seniors return as fifth-years unless they leave.</li>
+        <li>Commit list matches the 20 commits reported through Oct. 15, 2026. Fakatou (listed DL 6-7, 275) is placed at DE.</li>
+        <li>Does not include incoming transfers or players who leave mid-season.</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    Sources: <a href="https://www.elevenwarriors.com/ohio-state-football/scholarship-grid">Eleven Warriors scholarship grid</a> ·
+    <a href="https://www.on3.com/college/ohio-state-buckeyes-9533/football/2027/industry-comparison-commits/">On3 2027 commits</a>
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
