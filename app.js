@@ -38,11 +38,12 @@ G.forEach(([pos,cols],r)=>{
   tb.appendChild(tr);
 });
 function calc(){
-  const colT=[0,0,0,0,0];let all=0,out=0;
+  const colT=[0,0,0,0,0];let all=0,out=0,commits=0;
   [...tb.rows].forEach((tr,r)=>{
     let rt=0;
     tr.querySelectorAll(".p:not(.done)").forEach(p=>{
-      if(p.classList.contains("out")){out++;return;}
+      if(p.classList.contains("out")){if(!p.classList.contains("commit"))out++;return;}
+      if(p.classList.contains("commit"))commits++;
       rt++;colT[+p.dataset.c]++;
     });
     const t=tr.querySelector(".tot");t.textContent=rt;
@@ -55,6 +56,7 @@ function calc(){
   document.getElementById("tg").textContent=doneCount;
   document.getElementById("sTotal").textContent=all;
   document.getElementById("sOut").textContent=out;
+  document.getElementById("sCommits").textContent=commits;
 }
 document.getElementById("reset").addEventListener("click",()=>{document.querySelectorAll(".p:not(.done)").forEach(p=>{const d=!!p.dataset.def;p.classList.toggle("out",d);p.setAttribute("aria-pressed",d);});calc();});
 calc();
